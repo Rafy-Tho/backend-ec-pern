@@ -3,24 +3,24 @@
     "firstName": "John",
     "lastName": "Doe",
     "email": "john.doe@example.com",
-    "password": "Password123"
+    "password": "Password@!!123"
   },
   {
     "firstName": "Jane",
     "lastName": "Smith",
     "email": "jane.smith@example.com",
-    "password": "SecurePass456"
+    "password": "SecurePass@!!456"
   },
   {
     "firstName": "Alice",
     "lastName": "Johnson",
     "email": "alice.johnson@example.com",
-    "password": "Alice789!"
+    "password": "Alice789!@#"
   },
   {
     "firstName": "Bob",
     "lastName": "Brown",
     "email": "bob.brown@example.com",
-    "password": "BobPass321"
+    "password": "BobPass321!@#"
   }
 ]

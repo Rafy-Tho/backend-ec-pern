@@ -12,7 +12,6 @@ function requireAuth(req, res, next) {
   if (!isValidSession) {
     return next(new ApiError(401, "Unauthorized"));
   }
-
   next();
 }
 

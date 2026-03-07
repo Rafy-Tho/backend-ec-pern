@@ -9,9 +9,14 @@ import errorHandler from "./middlewares/errorHandler.js";
 import notFound from "./utils/notFound.js";
 import userRouter from "./routes/userRoute.js";
 import addressRouter from "./routes/addressRoute.js";
+import path from "path";
+import { fileURLToPath } from "url";
+import categoryRouter from "./routes/categoryRoute.js";
 // configure express
 const app = express();
 const pgSession = connectPgSimple(session);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 // configure express middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -50,10 +55,11 @@ app.use(
     },
   }),
 );
+app.use(express.static(path.join(__dirname, "../uploads")));
 // configure express routes
-
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/addresses", addressRouter);
+app.use("/api/v1/categories", categoryRouter);
 // handle errors middleware
 app.use(notFound);
 app.use(errorHandler);

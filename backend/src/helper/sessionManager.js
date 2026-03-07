@@ -8,6 +8,7 @@ class SessionManager {
           user_id: userData.user_id,
           name: userData.username,
           login_at: new Date(),
+          role: userData.role,
           userAgent: req.headers["user-agent"],
           ip: req.headers["x-forwarded-for"] || req.ip,
         };
