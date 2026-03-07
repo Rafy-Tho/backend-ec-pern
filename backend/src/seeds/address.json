@@ -1,0 +1,82 @@
+[
+  {
+    "address_1": "123 Main St",
+    "address_2": "Apt 4B",
+    "city": "New York",
+    "state": "NY",
+    "country": "USA",
+    "postal_code": "10001"
+  },
+  {
+    "address_1": "456 Oak Avenue",
+    "address_2": "Suite 12",
+    "city": "Los Angeles",
+    "state": "CA",
+    "country": "USA",
+    "postal_code": "90001"
+  },
+  {
+    "address_1": "789 Maple Road",
+    "address_2": "",
+    "city": "Chicago",
+    "state": "IL",
+    "country": "USA",
+    "postal_code": "60601"
+  },
+  {
+    "address_1": "12 King Street",
+    "address_2": "Floor 3",
+    "city": "London",
+    "state": "England",
+    "country": "UK",
+    "postal_code": "EC1A 1BB"
+  },
+  {
+    "address_1": "34 Rue de Rivoli",
+    "address_2": "Apt 7",
+    "city": "Paris",
+    "state": "Île-de-France",
+    "country": "France",
+    "postal_code": "75001"
+  },
+  {
+    "address_1": "56 Shibuya Crossing",
+    "address_2": "Building A",
+    "city": "Tokyo",
+    "state": "Tokyo",
+    "country": "Japan",
+    "postal_code": "150-0002"
+  },
+  {
+    "address_1": "78 Orchard Road",
+    "address_2": "Unit 15",
+    "city": "Singapore",
+    "state": "Central",
+    "country": "Singapore",
+    "postal_code": "238841"
+  },
+  {
+    "address_1": "90 Sukhumvit Road",
+    "address_2": "Condo 10B",
+    "city": "Bangkok",
+    "state": "Bangkok",
+    "country": "Thailand",
+    "postal_code": "10110"
+  },
+  {
+    "address_1": "21 Norodom Blvd",
+    "address_2": "Apartment 5",
+    "city": "Phnom Penh",
+    "state": "Phnom Penh",
+    "country": "Cambodia",
+    "postal_code": "120101"
+  },
+  {
+    "address_1": "65 Nguyen Hue Street",
+    "address_2": "Office 8",
+    "city": "Ho Chi Minh City",
+    "state": "Ho Chi Minh",
+    "country": "Vietnam",
+    "postal_code": "700000"
+  }
+]
