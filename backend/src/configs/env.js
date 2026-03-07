@@ -16,6 +16,7 @@ const ENV = {
   MAIL_USER: process.env.MAIL_USER,
   MAIL_PASSWORD: process.env.MAIL_PASSWORD,
   EMAIL_SENDER: process.env.EMAIL_SENDER,
+  URL: process.env.URL,
 };
 
 export default ENV;

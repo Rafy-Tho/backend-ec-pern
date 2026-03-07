@@ -49,7 +49,7 @@ product_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
 title VARCHAR(100) not NULL,
 description TEXT,
 price NUMERIC(10,2) not null CHECK (price >=0),
-image_url TEXT,
+image_url TEXT NOT NULL,
 quantity INTEGER not null DEFAULT 0 CHECK (quantity >=0),
 created_at TIMESTAMP with time zone DEFAULT NOW()
 );

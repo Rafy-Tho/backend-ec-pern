@@ -6,7 +6,7 @@ import { fileURLToPath } from "url";
 // 1. Correctly handle paths in ES Modules
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-export const uploadFolder = path.join(__dirname, "../../uploads");
+const uploadFolder = path.join(__dirname, "../../uploads");
 
 // 3. Ensure the folder exists
 if (!fs.existsSync(uploadFolder)) {
