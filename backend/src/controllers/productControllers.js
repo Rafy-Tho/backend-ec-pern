@@ -39,7 +39,7 @@ export const updateProduct = asyncHandler(async (req, res, next) => {
   const { id } = req.params;
   const { title, description, price, quantity, categoryId, image } = req.body;
   const imageFile = req.file;
-
+  console.log({ image, imageFile });
   if (!imageFile && !image)
     return next(new ApiError(400, "Image file is required"));
 
@@ -57,9 +57,10 @@ export const updateProduct = asyncHandler(async (req, res, next) => {
 
   if (!updatedProduct) return next(new ApiError(404, "Product not found"));
 
-  const category = await productModel.getProductCategory(id, categoryId);
+  const category = await productModel.getProductCategory(id);
 
-  if (!category) await productModel.addProductCategory(id, categoryId);
+  if (category && category.category_id !== categoryId)
+    await productModel.updateProductCategory(id, categoryId);
 
   res.json({
     message: "Product updated successfully",
