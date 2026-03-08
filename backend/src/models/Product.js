@@ -42,10 +42,17 @@ class Product {
     );
     return result.rows[0];
   }
-  async getProductCategory(productId, categoryId) {
+  async updateProductCategory(productId, categoryId) {
     const result = await pgPool.query(
-      "SELECT * FROM products_categories WHERE product_id = $1 AND category_id = $2",
-      [productId, categoryId],
+      "UPDATE products_categories SET category_id = $1 WHERE product_id = $2 RETURNING *",
+      [categoryId, productId],
+    );
+    return result.rows[0];
+  }
+  async getProductCategory(productId) {
+    const result = await pgPool.query(
+      "SELECT * FROM products_categories WHERE product_id = $1",
+      [productId],
     );
     return result.rows[0];
   }
