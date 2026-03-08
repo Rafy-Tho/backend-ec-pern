@@ -14,13 +14,13 @@ import {
   updateAddress,
 } from "../controllers/addressControllers.js";
 
-const addressRouter = express.Router();
+const addressRoute = express.Router();
 // Create a new address
-addressRouter.post("/", requireAuth, validateAddress, validate, addAddress);
+addressRoute.post("/", requireAuth, validateAddress, validate, addAddress);
 // Get all addresses for the authenticated user
-addressRouter.get("/", requireAuth, getAddresses);
+addressRoute.get("/", requireAuth, getAddresses);
 // Update an address
-addressRouter.patch(
+addressRoute.patch(
   "/:addressId",
   requireAuth,
   validateAddress,
@@ -28,9 +28,9 @@ addressRouter.patch(
   updateAddress,
 );
 // Delete an address
-addressRouter.delete("/:addressId", requireAuth, deleteAddress);
+addressRoute.delete("/:addressId", requireAuth, deleteAddress);
 // Set a default address
-addressRouter.patch(
+addressRoute.patch(
   "/:addressId/default",
   requireAuth,
   validateDefaultAddress,
@@ -38,4 +38,4 @@ addressRouter.patch(
   changeDefaultAddress,
 );
 
-export default addressRouter;
+export default addressRoute;

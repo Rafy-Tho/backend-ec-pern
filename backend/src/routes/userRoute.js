@@ -18,19 +18,19 @@ import {
 } from "../validators/userValidator.js";
 import { validate } from "../middlewares/validate.js";
 
-const userRouter = express.Router();
+const userRoute = express.Router();
 
 // user register and login
-userRouter.post("/register", validateRegister, validate, register);
-userRouter.post("/login", validateLogin, validate, login);
+userRoute.post("/register", validateRegister, validate, register);
+userRoute.post("/login", validateLogin, validate, login);
 // user password reset
-userRouter.post(
+userRoute.post(
   "/send-password-reset-code",
   validateEmailResetCode,
   validate,
   sendPasswordResetCode,
 );
-userRouter.post(
+userRoute.post(
   "/reset-password",
   validateResetPassword,
   validate,
@@ -38,15 +38,15 @@ userRouter.post(
 );
 // user logout
 
-userRouter.delete("/logout", requireAuth, logout);
+userRoute.delete("/logout", requireAuth, logout);
 // user profile
-userRouter.get("/profile", requireAuth, getProfile);
+userRoute.get("/profile", requireAuth, getProfile);
 // user update password
-userRouter.patch(
+userRoute.patch(
   "/update-password",
   requireAuth,
   validateUpdatePassword,
   validate,
   updatePassword,
 );
-export default userRouter;
+export default userRoute;

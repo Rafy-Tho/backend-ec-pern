@@ -8,11 +8,13 @@ import { fileURLToPath } from "url";
 import pgPool from "./configs/database.js";
 import ENV from "./configs/env.js";
 import errorHandler from "./middlewares/errorHandler.js";
-import addressRouter from "./routes/addressRoute.js";
-import categoryRouter from "./routes/categoryRoute.js";
-import productRouter from "./routes/productRouter.js";
-import userRouter from "./routes/userRoute.js";
+
 import notFound from "./utils/notFound.js";
+import userRoute from "./routes/userRoute.js";
+import addressRoute from "./routes/addressRoute.js";
+import categoryRoute from "./routes/categoryRoute.js";
+import productRoute from "./routes/productRoute.js";
+import cartRoute from "./routes/cartRoute.js";
 // configure express
 const app = express();
 const pgSession = connectPgSimple(session);
@@ -58,10 +60,11 @@ app.use(
 );
 app.use(express.static(path.join(__dirname, "../uploads")));
 // configure express routes
-app.use("/api/v1/users", userRouter);
-app.use("/api/v1/addresses", addressRouter);
-app.use("/api/v1/categories", categoryRouter);
-app.use("/api/v1/products", productRouter);
+app.use("/api/v1/users", userRoute);
+app.use("/api/v1/addresses", addressRoute);
+app.use("/api/v1/categories", categoryRoute);
+app.use("/api/v1/products", productRoute);
+app.use("/api/v1/carts", cartRoute);
 // handle errors middleware
 app.use(notFound);
 app.use(errorHandler);

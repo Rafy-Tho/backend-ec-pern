@@ -8,17 +8,12 @@ import {
 } from "../controllers/categoryControllers.js";
 import authorize from "../middlewares/authorize.js";
 import requireAuth from "../middlewares/requireAuth.js";
-const categoryRouter = express.Router();
+const categoryRoute = express.Router();
 
-categoryRouter.post("/", requireAuth, authorize(["admin"]), createCategory);
-categoryRouter.get("/", getAllCategories);
-categoryRouter.get("/:id", getCategoryById);
-categoryRouter.patch("/:id", requireAuth, authorize(["admin"]), updateCategory);
-categoryRouter.delete(
-  "/:id",
-  requireAuth,
-  authorize(["admin"]),
-  deleteCategory,
-);
+categoryRoute.post("/", requireAuth, authorize(["admin"]), createCategory);
+categoryRoute.get("/", getAllCategories);
+categoryRoute.get("/:id", getCategoryById);
+categoryRoute.patch("/:id", requireAuth, authorize(["admin"]), updateCategory);
+categoryRoute.delete("/:id", requireAuth, authorize(["admin"]), deleteCategory);
 
-export default categoryRouter;
+export default categoryRoute;

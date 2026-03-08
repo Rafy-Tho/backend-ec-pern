@@ -12,12 +12,12 @@ import {
   updateProduct,
 } from "../controllers/productControllers.js";
 
-const productRouter = express.Router();
+const productRoute = express.Router();
 
-productRouter.get("/", getAllProducts);
-productRouter.get("/:id", getProductById);
+productRoute.get("/", getAllProducts);
+productRoute.get("/:id", getProductById);
 
-productRouter.post(
+productRoute.post(
   "/",
   requireAuth,
   authorize(["admin"]),
@@ -27,7 +27,7 @@ productRouter.post(
   addProduct,
 );
 
-productRouter.patch(
+productRoute.patch(
   "/:id",
   requireAuth,
   authorize(["admin"]),
@@ -37,6 +37,6 @@ productRouter.patch(
   updateProduct,
 );
 
-productRouter.delete("/:id", requireAuth, authorize(["admin"]), deleteProduct);
+productRoute.delete("/:id", requireAuth, authorize(["admin"]), deleteProduct);
 
-export default productRouter;
+export default productRoute;
